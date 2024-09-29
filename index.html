@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customized T-shirts</title>
+    <script defer src="script1.js"></script> 
+    <link rel="icon" type="image/png" href="icons8-t-shirt-96.png">
+    <style>
+        body {
+            font-family: 'Georgia', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 30px;
+            border: 2px solid #217fbf;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            background-color: #217fbf;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="number"], input[type="date"], select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, select:focus {
+            border-color: #217fbf;
+        }
+
+        button[type="submit"], button[type="reset"] {
+            width: 48%;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #217fbf;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="reset"]:hover, button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        #receipt {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #217fbf;
+            border-radius: 10px;
+            background-color: #f7f7f7;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        #receipt h2 {
+            color: #217fbf;
+            margin-bottom: 15px;
+        }
+
+        #receipt p {
+            margin: 10px 0;
+        }
+
+        #receipt h3 {
+            margin-top: 20px;
+            color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="orderForm">
+            <h1>Order Your Customized T-Shirt</h1>
+
+            <label for="tagline">Tagline on the Shirt:</label>
+            <input type="text" id="tagline" name="tagline" placeholder="Enter your tagline" required>
+
+            <label for="color">Color:</label>
+            <select id="color" name="color" required>
+                <option value="">Select color</option>
+                <option value="white">White</option>
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+
+            <label for="size">Size:</label>
+            <select id="size" name="size" required>
+                <option value="">Select size</option>
+                <option value="s">Small</option>
+                <option value="m">Medium</option>
+                <option value="l">Large</option>
+                <option value="xl">Extra Large</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" required>
+
+            <label for="delivery-date">Delivery Date:</label>
+            <input type="date" id="delivery-date" name="delivery-date" required>
+
+            <label for="name">Recipient's Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="contact">Contact (9 digits):</label>
+            <input type="text" id="contact" name="contact" maxlength="9" required>
+
+            <div class="form-buttons">
+                <button type="reset">Reset Form</button>
+                <button type="submit">Submit Order</button>
+            </div>
+        </form>
+
+        <div id="receipt"></div>
+    </div>
+</body>
+</html>
